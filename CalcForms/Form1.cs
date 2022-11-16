@@ -38,6 +38,16 @@ namespace CalcForms
 
         public void Action(string sAction)
         {
+            if (!fA)
+            {
+                sA += textBox.Text;
+            }
+            else
+            {
+                sB += textBox.Text;
+                fB = true;
+            }
+
             c.divByZero += C_divByZero;
 
             fA = true;
@@ -92,141 +102,51 @@ namespace CalcForms
         private void buttonOne_Click(object sender, EventArgs e)
         {
             textBox.AppendText(buttonOne.Text);
-            if (!fA)
-            {
-                sA += buttonOne.Text;
-            }
-            else
-            {
-                sB += buttonOne.Text;
-                fB = true;
-            }
         }
 
         private void buttonTwo_Click(object sender, EventArgs e)
         {
             textBox.AppendText(buttonTwo.Text);
-            if (!fA)
-            {
-                sA += buttonTwo.Text;
-            }
-            else
-            {
-                sB += buttonTwo.Text;
-                fB = true;
-            }
         }
 
         private void buttonThree_Click(object sender, EventArgs e)
         {
             textBox.AppendText(buttonThree.Text);
-            if (!fA)
-            {
-                sA += buttonThree.Text;
-            }
-            else
-            {
-                sB += buttonThree.Text;
-                fB = true;
-            }
         }
 
         private void buttonFour_Click(object sender, EventArgs e)
         {
             textBox.AppendText(buttonFour.Text);
-            if (!fA)
-            {
-                sA += buttonFour.Text;
-            }
-            else
-            {
-                sB += buttonFour.Text;
-                fB = true;
-            }
         }
 
         private void buttonFive_Click(object sender, EventArgs e)
         {
             textBox.AppendText(buttonFive.Text);
-            if (!fA)
-            {
-                sA += buttonFive.Text;
-            }
-            else
-            {
-                sB += buttonFive.Text;
-                fB = true;
-            }
         }
 
         private void buttonSix_Click(object sender, EventArgs e)
         {
             textBox.AppendText(buttonSix.Text);
-            if (!fA)
-            {
-                sA += buttonSix.Text;
-            }
-            else
-            {
-                sB += buttonSix.Text;
-                fB = true;
-            }
         }
 
         private void buttonSeven_Click(object sender, EventArgs e)
         {
             textBox.AppendText(buttonSeven.Text);
-            if (!fA)
-            {
-                sA += buttonSeven.Text;
-            }
-            else
-            {
-                sB += buttonSeven.Text;
-                fB = true;
-            }
         }
 
         private void buttonEight_Click(object sender, EventArgs e)
         {
             textBox.AppendText(buttonEight.Text);
-            if (!fA)
-            {
-                sA += buttonEight.Text;
-            }
-            else
-            {
-                sB += buttonEight.Text;
-                fB = true;
-            }
         }
 
         private void buttonNine_Click(object sender, EventArgs e)
         {
             textBox.AppendText(buttonNine.Text);
-            if (!fA)
-            {
-                sA += buttonNine.Text;
-            }
-            else
-            {
-                sB += buttonNine.Text;
-                fB = true;
-            }
         }
 
         private void buttonZero_Click(object sender, EventArgs e)
         {
             textBox.AppendText(buttonZero.Text);
-            if (!fA)
-            {
-                sA += buttonZero.Text;
-            }
-            else
-            {
-                sB += buttonZero.Text;
-                fB = true;
-            }
         }
 
         private void buttonPlus_Click(object sender, EventArgs e)
