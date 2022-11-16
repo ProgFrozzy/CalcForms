@@ -6,7 +6,9 @@ namespace CalcForms
 {
     public partial class Form1 : Form
     {
-        Calc calc = new Calc();
+        Calc c = new Calc();
+
+
         //Переменные для данных цифр и действий.
         string sA, sB, sAction, sTemp;
         double dA, dB;
@@ -35,32 +37,34 @@ namespace CalcForms
 
         public void Action(string sAction)
         {
+            c.divByZero += C_divByZero;
+
             fA = true;
             textBox.Text += sAction;
 
             if (fB)
             {
-                calc.getSign = label.Text.Substring(label.Text.Length - 1);
-                if (calc.getSign == "/" & Convert.ToDouble(sB) == 0)
+                c.getSign = label.Text.Substring(label.Text.Length - 1);
+                /*if (calc.getSign == "/" & Convert.ToDouble(sB) == 0)
                 {
                     MessageBox.Show("На нуль делить нельзя!");
                 }
                 else
                 {
-                    /*calc.sA = sA;
-                    calc.sB = sB;*/
 
-                    calc.A = Convert.ToDouble(sA);
-                    calc.B = Convert.ToDouble(sB);
-
-                    dA = calc.Action();
-
-                    sA = dA.ToString();
-                    sB = "";
 
                     label.Text = dA + sAction;
-                }
+                }*/
+                /*calc.sA = sA;
+                  calc.sB = sB;*/
 
+                c.A = Convert.ToDouble(sA);
+                c.B = Convert.ToDouble(sB);
+
+                dA = c.Action();
+
+                sA = dA.ToString();
+                sB = "";
             }
             else
             {
@@ -69,6 +73,11 @@ namespace CalcForms
             textBox.Clear();
             fMinus = true;
             fPoint = false;
+        }
+
+        private void C_divByZero()
+        {
+            MessageBox.Show("Деление на нуль!");
         }
 
         private void buttonOne_Click(object sender, EventArgs e)
