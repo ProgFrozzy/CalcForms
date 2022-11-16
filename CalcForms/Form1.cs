@@ -68,7 +68,7 @@ namespace CalcForms
                 }*/
                 /*calc.sA = sA;
                   calc.sB = sB;*/
-
+                dA = Convert.ToDouble(sA);
                 c.A = Convert.ToDouble(sA);
                 c.B = Convert.ToDouble(sB);
 
@@ -76,13 +76,13 @@ namespace CalcForms
 
                 sA = dA.ToString();
 
-                if (Convert.ToDouble(sB) != 0) 
+                if (Convert.ToDouble(sB) != 0)
                 {
                     label.Text = sA + sAction;
                 }
                 sB = "";
 
-                
+
                 //label.Text = sA + sAction;
             }
             else
@@ -190,20 +190,10 @@ namespace CalcForms
         {
             int size = textBox.Text.Length;
 
-            if (size > 0 || fPoint)
+            if (size > 0 && !fPoint)
             {
-                if (!fA)
-                {
-                    sA += ",";
-                    textBox.AppendText(",");
-                    fPoint = true;
-                }
-                else
-                {
-                    sB += ",";
-                    textBox.AppendText(",");
-                    fPoint = true;
-                }
+                textBox.AppendText(",");
+                fPoint = true;
             }
         }
 
@@ -214,14 +204,6 @@ namespace CalcForms
             if (size > 0)
             {
                 textBox.Text = textBox.Text.Substring(0, size - 1);
-                if (!fA)
-                {
-                    sA = textBox.Text = textBox.Text.Substring(0, size - 1);
-                }
-                else
-                {
-                    sB = textBox.Text = textBox.Text.Substring(0, size - 1);
-                }
             }
         }
 
