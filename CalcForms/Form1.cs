@@ -1,5 +1,5 @@
 //.NET 6.0
-//Рабочая версия
+//Рабочая версия 1
 using LibaryForFormsCalc;
 
 namespace CalcForms
