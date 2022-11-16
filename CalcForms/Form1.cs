@@ -1,29 +1,30 @@
 //.NET 6.0
-//Рабочая версия
+//Р Р°Р±РѕС‡Р°СЏ РІРµСЂСЃРёСЏ
 using LibaryForFormsCalc;
 
 namespace CalcForms
 {
+
     public partial class Form1 : Form
     {
         Calc c = new Calc();
 
 
-        //Переменные для данных цифр и действий.
+        //РџРµСЂРµРјРµРЅРЅС‹Рµ РґР»СЏ РґР°РЅРЅС‹С… С†РёС„СЂ Рё РґРµР№СЃС‚РІРёР№.
         string sA, sB, sAction, sTemp;
         double dA, dB;
 
-        //Флаг. True - если ввели А, False - если ещё не ввели A.
+        //Р¤Р»Р°Рі. True - РµСЃР»Рё РІРІРµР»Рё Рђ, False - РµСЃР»Рё РµС‰С‘ РЅРµ РІРІРµР»Рё A.
         bool fA = false;
 
-        //Флаг для выполнения вычислений
+        //Р¤Р»Р°Рі РґР»СЏ РІС‹РїРѕР»РЅРµРЅРёСЏ РІС‹С‡РёСЃР»РµРЅРёР№
         bool fB = false;
 
-        //Флаг для минуса
+        //Р¤Р»Р°Рі РґР»СЏ РјРёРЅСѓСЃР°
         bool fMinus = false;
 
-        //Флаг для точки
-        //True - есть точка, False - нет точки
+        //Р¤Р»Р°Рі РґР»СЏ С‚РѕС‡РєРё
+        //True - РµСЃС‚СЊ С‚РѕС‡РєР°, False - РЅРµС‚ С‚РѕС‡РєРё
         bool fPoint = false;
         public Form1()
         {
@@ -47,7 +48,7 @@ namespace CalcForms
                 c.getSign = label.Text.Substring(label.Text.Length - 1);
                 /*if (calc.getSign == "/" & Convert.ToDouble(sB) == 0)
                 {
-                    MessageBox.Show("На нуль делить нельзя!");
+                    MessageBox.Show("РќР° РЅСѓР»СЊ РґРµР»РёС‚СЊ РЅРµР»СЊР·СЏ!");
                 }
                 else
                 {
@@ -64,7 +65,15 @@ namespace CalcForms
                 dA = c.Action();
 
                 sA = dA.ToString();
+
+                if (Convert.ToDouble(sB) != 0) 
+                {
+                    label.Text = sA + sAction;
+                }
                 sB = "";
+
+                
+                //label.Text = sA + sAction;
             }
             else
             {
@@ -77,7 +86,7 @@ namespace CalcForms
 
         private void C_divByZero()
         {
-            MessageBox.Show("Деление на нуль!");
+            MessageBox.Show("Р”РµР»РµРЅРёРµ РЅР° РЅСѓР»СЊ!");
         }
 
         private void buttonOne_Click(object sender, EventArgs e)
@@ -208,7 +217,7 @@ namespace CalcForms
 
         private void buttonZero_Click(object sender, EventArgs e)
         {
-                        textBox.AppendText(buttonZero.Text);
+            textBox.AppendText(buttonZero.Text);
             if (!fA)
             {
                 sA += buttonZero.Text;
